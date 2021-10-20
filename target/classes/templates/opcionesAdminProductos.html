@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container mt-4">
+    	<a th:href="@{/nuevoProducto}" class="btn btn-primary">Nuevo</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>descripcion</th>
+                    <th>referencia</th>
+                    <th>talla</th>
+                    <th>valor</th>
+                    <th>cantidad Disponible</th>
+                    <th>categoria</th>
+                    <th>coleccion Producto</th>
+                </tr>
+                <tbody>
+                    <tr th:each="Producto:${Productos}">
+                            <td th:text="${Producto.id_producto}"></td>
+                            <td th:text="${Producto.nombre}"></td>
+                            <td th:text="${Producto.descripcion}"></td>
+                            <td th:text="${Producto.referencia}"></td>
+                            <td th:text="${Producto.talla}"></td>
+                            <td th:text="${Producto.valor}"></td>
+                            <td th:text="${Producto.cantidadDisponible}"></td>
+                            <td th:text="${Producto.categoria}"></td>
+                            <td>
+                                <a class="btn btn-danger" th:href="@{/productosEliminar/}+${Producto.id_producto}">Eliminar</a>
+                                <a class="btn btn-warning" th:href="@{/productosEditar/}+${Producto.id_producto}">Editar</a>
+                            </td>
+                        
+                    </tr>
+                    <a th:href="@{/volverOpcionesAdmin}" class="btn btn-dark">Volver</a>
+
+                </tbody>
+            </thead>
+        </table>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="funciones.js"></script>
+</body>
+</html>

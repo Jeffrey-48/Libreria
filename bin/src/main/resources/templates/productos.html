@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>Lista productos</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="stylesheet" type="text/css" href="static/css/estilo-producto.css" th:href="@{/css/estilo-producto.css}" />
+
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>nombre</th>
+				<th>descripcion</th>
+				<th>referencia</th>
+				<th>talla</th>
+				<th>valor</th>
+				<th>cantidad Disponible</th>
+				<th>categoria</th>
+			</tr>
+		<tbody>
+			<tr th:each="Producto:${Productos}">
+				<td th:text="${Producto.nombre}"></td>
+				<td th:text="${Producto.descripcion}"></td>
+				<td th:text="${Producto.referencia}"></td>
+				<td th:text="${Producto.talla}"></td>
+				<td th:text="${Producto.valor}"></td>
+				<td th:text="${Producto.cantidadDisponible}"></td>
+				<td th:text="${Producto.categoria}"></td>
+			</tr>
+		</tbody>
+		</thead>
+	</table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="static/css/login.css" th:href="@{/css/login.css}" />
+</head>
+<body>
+    <section class="loginSpace">
+        <link rel="stylesheet" href="login.css">
+        <h2 class="h2-section">Formulario de inicio de sesion</h2>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form th:action="@{/saveClienteNuevo}" method="POST" class="col-12">
+                    <h1>Crear cuenta</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <span>Crea tu cuenta facil</span>
+                    <input type="text" class="form-iniciar" placeholder="Nombre" name="nombre">
+                    <input type="text" class="form-iniciar" placeholder="Apellido" name="apellido">
+                    <input type="text" class="form-iniciar" placeholder="Cedula" name="cedula">
+                    <input type="email" class="form-iniciar" placeholder="Email" name="email">
+                    <input type="password" class="form-iniciar" placeholder="Contraseña" name="password">
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form th:action="@{/login}" method="POST" class="col-12">
+                    <h1>Iniciar Sesion</h1>
+                    <span>Bienvenido</span>
+                    <input type="email" class="form-iniciar" placeholder="Email" name="email">
+                    <input type="password" class="form-iniciar" placeholder="Password" name="password">
+                    <a th:href="@{/recuperarPassword}">Olvidaste tu contraseña?</a>
+                    <button type="submit">Iniciar sesion</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Ya eres cliente?</h1>
+                        <p>Si ya te encuentras registrado inicia con tu cuenta</p>
+                        <button class="ghost" id="signIn">Iniciar Sesion</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Bienvenido!</h1>
+                        <p>Crea tu cuenta en un solo paso</p>
+                        <button class="ghost" id="signUp">Crear cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="static/javascript/login.js" th:src="@{/javascript/login.js}"></script>
+</body>
+</html>
